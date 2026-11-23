@@ -1395,6 +1395,39 @@ body.inner-page .site-header { display: none !important; }
   scroll-snap-align: start;
 }
 
+/* On phones, the two hobby cards become roomy single-column cards. The
+   crochet photos stay intentionally large and swipe horizontally instead of
+   forcing the page wider or shrinking into unreadable thumbnails. */
+@media (max-width: 760px) {
+  .inner-page .about-section[aria-labelledby="hobbies-title"] { padding: 30px 0 38px; }
+  .inner-page .about-hobbies {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .inner-page .about-hobbies article {
+    min-width: 0;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .inner-page .about-hobbies span { margin-bottom: 12px; }
+  .inner-page .about-hobbies h3 { font-size: clamp(25px, 8vw, 32px); }
+  .inner-page .about-hobbies p { font-size: 15px; line-height: 1.65; }
+  .inner-page .crochet-photo-scroll {
+    width: 100%;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 2px 2px 12px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+  }
+  .inner-page .crochet-photo-scroll img {
+    width: min(70vw, 220px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
 /* Landing map refinements: clearer path joins, compact avatar, sans display. */
 :root { --world-display: 'Crassula', Manrope, sans-serif; }
 
