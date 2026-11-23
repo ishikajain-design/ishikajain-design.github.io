@@ -2,47 +2,102 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ishika Jain's crochet-inspired design portfolio." />
-    <title>Ishika Jain — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#159bd5" />
+    <title>Ishika Jain — Design Portfolio</title>
+    <link rel="stylesheet" href="shared.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="map.css" />
   </head>
   <body>
-    <main class="portfolio-shell">
-      <header class="site-header">
-        <a class="wordmark" href="index.html" aria-label="Ishika Jain home">Ishika Jain</a>
-        <span class="section-marker">Design portfolio</span>
-      </header>
+    <h1 class="sr-only">Ishika Jain — Design portfolio world map</h1>
 
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="intro">
-          <h1 id="hero-title">Welcome to<br />Ishika’s Garden</h1>
-          <p class="intro-copy">Where thoughtful design and human experiences come together, stitch by stitch.</p>
-          <p class="hint">* Click on the leaves to explore more.</p>
-          <nav class="social-links" aria-label="Contact links">
-            <a href="https://www.linkedin.com/in/ishika-jain-973686215/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="mailto:ijain04@calpoly.edu">Email <span aria-hidden="true">↗</span></a>
-            <a href="resume.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
-          </nav>
-        </div>
+    <div class="sky" aria-hidden="true">
+      <img class="sky-background" src="assets/sky-background.jpg" alt="" />
+      <div class="drift drift-one"></div>
+      <div class="drift drift-two"></div>
+      <div class="drift drift-three"></div>
+    </div>
 
-        <div class="plant" aria-label="Choose a portfolio section from the crocheted leaves">
-          <img class="plant-base" src="assets/crochet-leaf-stem.png" alt="Three green crocheted leaves attached to a crocheted stem" />
-          <div class="leaf-shade leaf-shade--about" aria-hidden="true"><img src="assets/crochet-leaf-stem.png" alt="" /></div>
-          <div class="leaf-shade leaf-shade--ux" aria-hidden="true"><img src="assets/crochet-leaf-stem.png" alt="" /></div>
-          <div class="leaf-shade leaf-shade--graphic" aria-hidden="true"><img src="assets/crochet-leaf-stem.png" alt="" /></div>
+    <header class="utility-nav" aria-label="Portfolio links">
+      <a class="utility-link" href="https://www.linkedin.com/in/ishika-jain-973686215/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 8.1V19H2.8V8.1h3.6ZM4.6 2.7a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM12.2 8.1v1.5h.1c.5-.9 1.8-1.9 3.7-1.9 3.9 0 4.7 2.6 4.7 6V19h-3.6v-4.7c0-1.1 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V19H9.2V8.1h3Z"/></svg>
+        <span class="tooltip">LinkedIn</span>
+      </a>
+      <a class="utility-link" href="mailto:ijain04@calpoly.edu" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5h17A2.5 2.5 0 0 1 23 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-17A2.5 2.5 0 0 1 1 16.5v-9A2.5 2.5 0 0 1 3.5 5Zm8.5 7.2 7.5-4.5h-15l7.5 4.5Zm0 2.4L3.4 9.5v7h17v-7L12 14.6Z"/></svg>
+        <span class="tooltip">Email</span>
+      </a>
+      <a class="utility-link" href="resume.pdf" download aria-label="Download résumé">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10l3.4-3.4 1.4 1.4-5.8 5.8L6.2 11l1.4-1.4L11 13V3ZM4 18h16v3H4v-3Z"/></svg>
+        <span class="tooltip">Download résumé</span>
+      </a>
+    </header>
 
-          <a class="leaf-link leaf-link--graphic" href="graphic-design.html" aria-label="Go to Graphic Design Projects"><span>Graphic design</span></a>
-          <a class="leaf-link leaf-link--ux" href="ux-design.html" aria-label="Go to UX Design"><span>UX design</span></a>
-          <a class="leaf-link leaf-link--about" href="about.html" aria-label="Go to About Me"><span>About me</span></a>
-        </div>
-      </section>
+    <main id="map" class="map" aria-label="Choose a portfolio world">
+      <svg id="routes" class="routes" aria-hidden="true"></svg>
 
-      <footer class="footer-note">© 2026 Ishika Jain <span>Made with care &amp; a little yarn</span></footer>
+      <div id="start" class="cloud start-cloud" aria-hidden="true">
+        <img class="cloud-image" src="assets/cloud-platform-wide.webp" alt="" />
+        <i class="anchor" data-anchor="start-graphic" data-side="right" data-t=".36"></i>
+        <i class="anchor" data-anchor="start-about" data-side="bottom" data-t=".7"></i>
+        <i class="anchor" data-anchor="start-ux" data-side="bottom" data-t=".38"></i>
+        <i class="anchor" data-anchor="start-stand" data-side="top" data-t=".41" data-follow="pipe" data-inset="17"></i>
+      </div>
+
+      <a id="graphic-design" class="cloud world graphic-cloud" href="graphic-design.html" aria-label="Graphic Design — Visual and brand design">
+        <span class="cloud-art">
+          <img class="cloud-image" src="assets/cloud-platform-wide.webp" alt="" />
+          <span class="cloud-tint"></span>
+        </span>
+        <img class="world-icon graphic-icon" src="assets/cloud-graphic-tools.webp" alt="" />
+        <span class="label">
+          <img class="label-art" src="assets/crochet-label.webp" alt="" />
+          <span class="label-copy"><strong>Graphic Design</strong><small>Visual &amp; brand design</small></span>
+        </span>
+        <i class="anchor" data-anchor="graphic-start" data-side="left" data-t=".45"></i>
+        <i class="anchor" data-anchor="graphic-about" data-side="right" data-t=".48"></i>
+        <i class="anchor" data-anchor="graphic-stand" data-side="top" data-t=".17" data-inset="17"></i>
+      </a>
+
+      <a id="about-me" class="cloud world about-cloud" href="about.html" aria-label="About Me — Get to know me">
+        <span class="cloud-art">
+          <img class="cloud-image mirrored" src="assets/cloud-platform-wide.webp" alt="" />
+          <span class="cloud-tint mirrored"></span>
+        </span>
+        <img class="world-icon about-icon" src="assets/cloud-turtle-basket.webp" alt="" />
+        <span class="label">
+          <img class="label-art" src="assets/crochet-label.webp" alt="" />
+          <span class="label-copy"><strong>About Me</strong><small>Get to know me</small></span>
+        </span>
+        <i class="anchor" data-anchor="about-start" data-side="left" data-t=".6"></i>
+        <i class="anchor" data-anchor="about-graphic" data-side="top" data-t=".85"></i>
+        <i class="anchor" data-anchor="about-ux" data-side="right" data-t=".5"></i>
+        <i class="anchor" data-anchor="about-stand" data-side="top" data-t=".16" data-inset="17"></i>
+      </a>
+
+      <a id="ux-design" class="cloud world ux-cloud" href="ux-design.html" aria-label="UX Design — Product design and research">
+        <span class="cloud-art">
+          <img class="cloud-image mirrored" src="assets/cloud-platform-wide.webp" alt="" />
+          <span class="cloud-tint mirrored"></span>
+        </span>
+        <img class="world-icon ux-icon" src="assets/cloud-ux-toolkit.webp" alt="" />
+        <span class="label">
+          <img class="label-art" src="assets/crochet-label.webp" alt="" />
+          <span class="label-copy"><strong>UX Design</strong><small>Product design • Research</small></span>
+        </span>
+        <i class="anchor" data-anchor="ux-start" data-side="left" data-t=".45"></i>
+        <i class="anchor" data-anchor="ux-about" data-side="right" data-t=".45"></i>
+        <i class="anchor" data-anchor="ux-stand" data-side="top" data-t=".15" data-inset="17"></i>
+      </a>
+
+      <img id="avatar" class="avatar" src="assets/cloud-avatar-map.webp" alt="Portfolio guide" />
+      <div id="intro" class="intro stitched" role="status"><span>Hi! Click a world<br />to enter.</span></div>
+      <img class="pipe" src="assets/cloud-pipe-red.webp" alt="" aria-hidden="true" />
+      <svg id="knots" class="knots" aria-hidden="true"></svg>
     </main>
-    <script src="script.js"></script>
+
+    <script defer src="map-transition.js"></script>
+    <script defer src="map.js"></script>
   </body>
 </html>

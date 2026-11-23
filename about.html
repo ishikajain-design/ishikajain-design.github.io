@@ -8,12 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="shared.css" />
   </head>
   <body class="inner-page">
-    <header class="site-header inner-header">
-      <a class="wordmark" href="index.html">Ishika Jain</a>
-      <span class="section-marker">Design portfolio</span>
-    </header>
+    <a class="home-cloud-label" href="index.html" aria-label="Go back to home"><span class="home-cloud-label__arrow" aria-hidden="true">←</span><span>Home</span></a>
+    <nav class="inner-utility-nav" aria-label="Portfolio links"><a href="https://www.linkedin.com/in/ishika-jain-973686215/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a><a href="mailto:ijain04@calpoly.edu" aria-label="Email">✉</a><a href="resume.pdf" download aria-label="Download résumé">↓</a></nav>
 
     <main class="about-page">
       <section class="about-hero">
@@ -40,14 +39,21 @@
         <div class="about-prose"><p>I bring hands-on experience across UX, app, and graphic design, along with foundational coding skills in HTML, Python, Java, MySQL, and GitHub. That mix helps me think beyond the screen and design with both the experience and its implementation in mind.</p><p>I’m adaptable and enjoy making sense of new problems. Because design tools and workflows change quickly, I’m comfortable learning as I go—many of my strongest projects began with a tool, system, or subject area I had to figure out while building.</p><p>I ask questions, translate ambiguous feedback into clear choices, and stay close to the details until a design feels both usable and polished. Most importantly, I pair visual craft with an audience-first mindset so the work is clear, useful, and easy to return to.</p></div>
       </section>
 
+      <section class="about-section about-section--split" aria-labelledby="ai-title">
+        <div><p class="page-kicker">How I work with AI</p><h2 id="ai-title">AI can accelerate the process. It should not replace judgment.</h2></div>
+        <div class="about-prose"><p>I use AI to explore, synthesize, prototype, and automate repetitive steps—not to produce generic work that loses the reason it was designed in the first place. Every direction still needs a human perspective: understanding the audience, questioning the output, and deciding what belongs in the final experience.</p><p>My process is less a rigid double diamond and more of a human-led AI feedback loop. AI helps me move through possibilities faster, but I make the ultimate decisions: what to keep, what to refine, and what genuinely solves the problem.</p><p>When I design systems that include agentic AI, I create rules that both people and agents can rely on: what an agent can do, what it should never change, what must remain hidden, and when control needs to return to a person. I automate deliberately—when it removes repetitive work instead of creating more oversight—and keep prompts concise, purposeful, and token-aware.</p></div>
+      </section>
+
       <section class="about-section" aria-labelledby="hobbies-title">
         <div class="about-section__intro"><p class="page-kicker">Beyond the screen</p><h2 id="hobbies-title">Things that keep my hands busy.</h2></div>
         <div class="about-hobbies">
-          <article><span aria-hidden="true">🧶</span><h3>Crocheting</h3><p>Crocheting is where my portfolio theme began. It definitely tested my patience at first, but after 24 hours, I finished my first baby turtle. I love turtles, and I’m now crocheting a whole family of them.</p></article>
+          <article><span aria-hidden="true">🧶</span><h3>Crocheting</h3><p>Crocheting is where my portfolio theme began. It definitely tested my patience at first, but after 24 hours, I finished my first baby turtle. I love turtles, and I’m now crocheting a whole family of them.</p><div class="crochet-photo-scroll" aria-label="Ishika's crochet projects"><img src="assets/crochet-turtle-pink.jpeg" alt="Pastel crochet turtle keychain" /><img src="assets/crochet-turtle-green.jpeg" alt="Green crochet turtle" /><img src="assets/crochet-turtle-blue.jpeg" alt="Blue crochet sea creature" /><img src="assets/crochet-flower.jpeg" alt="Pink crochet flower" /></div></article>
           <article><span aria-hidden="true">🍳</span><h3>Cooking</h3><p>I love testing and creating new recipes. In high school, I invented a dish called Avocado Krispies and was the first runner-up in my district. A fun fact: I can recreate a dish with almost 90% accuracy just by tasting it.</p></article>
         </div>
       </section>
     </main>
-    <footer class="project-footer"><a href="index.html">← Back to the garden</a></footer>
+    <footer class="project-footer"><a href="index.html">← Return to Sky Map</a></footer>
+    <script src="map-transition.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
