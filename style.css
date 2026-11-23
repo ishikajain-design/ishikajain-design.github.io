@@ -1430,6 +1430,38 @@ body.inner-page .site-header { display: none !important; }
   }
 }
 
+/* Keep the hobby grid and both cards contained when a desktop browser is
+   narrowed as well as at the mobile breakpoint. */
+.inner-page .about-page,
+.inner-page .about-section[aria-labelledby="hobbies-title"],
+.inner-page .about-hobbies,
+.inner-page .about-hobbies article {
+  min-width: 0;
+  max-width: 100%;
+}
+.inner-page .about-section[aria-labelledby="hobbies-title"] {
+  width: 100%;
+  overflow: hidden;
+}
+.inner-page .about-hobbies {
+  width: 100%;
+  box-sizing: border-box;
+}
+.inner-page .about-hobbies article {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.inner-page .about-hobbies p { overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  .inner-page .about-section[aria-labelledby="hobbies-title"] {
+    padding: 32px clamp(20px, 6vw, 28px) 36px;
+  }
+  .inner-page .about-hobbies article {
+    padding: clamp(20px, 6vw, 26px);
+  }
+}
+
 /* Landing map refinements: clearer path joins, compact avatar, sans display. */
 :root { --world-display: 'Crassula', Manrope, sans-serif; }
 
