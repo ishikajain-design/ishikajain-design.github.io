@@ -1185,6 +1185,95 @@ body.inner-page::before {
   .world-home.is-ready .thought-bubble { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* Final consistency pass for header controls, hobby cards, and case-study rhythm. */
+.inner-utility-nav .utility-link svg {
+  width: 31%;
+  max-width: 22px;
+  fill: currentColor;
+}
+
+.inner-utility-nav .utility-link .tooltip {
+  z-index: 90;
+}
+
+.crochet-photo-scroll {
+  align-items: center;
+  min-height: 188px;
+  padding: 10px 4px 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,.42), rgba(217,239,225,.52));
+  border-radius: 16px;
+}
+
+.crochet-photo-scroll img {
+  width: 150px;
+  height: 166px;
+  object-fit: contain;
+  padding: 7px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cooking-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.cooking-notes div {
+  display: grid;
+  min-height: 102px;
+  padding: 14px 11px;
+  place-content: center;
+  border: 1px dashed rgba(47, 94, 68, .35);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fff9e8, #e2efd9);
+  text-align: center;
+}
+
+.cooking-notes strong {
+  color: #284e2c;
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.cooking-notes span {
+  margin-top: 7px;
+  color: #537043;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* Let each visual card fit its actual content rather than stretching to match
+   a longer neighboring text column. */
+.inner-page .rm-section:not(.rm-hero) .rm-grid,
+.inner-page .case-block--split { align-items: start; }
+
+.inner-page .rm-section:not(.rm-hero) .rm-visual,
+.inner-page .case-block .visual-slot {
+  min-height: 0;
+  align-content: start;
+}
+
+.inner-page .case-block .visual-slot {
+  margin-bottom: clamp(20px, 3vw, 36px);
+  padding: clamp(16px, 2vw, 26px);
+}
+
+@media (max-width: 760px) {
+  .crochet-photo-scroll { min-height: 0; }
+  .crochet-photo-scroll img { width: min(66vw, 210px); height: 205px; }
+  .cooking-notes { grid-template-columns: 1fr; gap: 10px; }
+  .cooking-notes div { min-height: 78px; grid-template-columns: minmax(0, 1fr) minmax(110px, .8fr); align-items: center; text-align: left; }
+  .cooking-notes span { margin-top: 0; text-align: right; }
+}
+
 /* Keep the same sky artwork behind every existing portfolio world. */
 body.inner-page {
   background: #70ccee url('assets/sky-background.jpg') center top / cover fixed no-repeat !important;
@@ -2554,4 +2643,61 @@ body.inner-page .site-header { display: none !important; }
     transform: translateY(0) scale(1);
     animation: none !important;
   }
+}
+
+/* Keep these final overrides after the legacy page styles so all screens use
+   the same controls and content-led card heights. */
+.inner-utility-nav .utility-link svg { width: 31%; max-width: 22px; fill: currentColor; }
+.inner-utility-nav .utility-link .tooltip { z-index: 90; }
+
+.crochet-photo-scroll {
+  align-items: center;
+  min-height: 188px;
+  padding: 10px 4px 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,.42), rgba(217,239,225,.52));
+}
+.crochet-photo-scroll img {
+  width: 150px;
+  height: 166px;
+  padding: 7px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  object-fit: contain;
+}
+.cooking-photo-scroll img {
+  padding: 0;
+  border: 1px solid rgba(47, 94, 68, .14);
+  background: #fff;
+  object-fit: cover;
+}
+
+.inner-page .rm-section:not(.rm-hero) .rm-grid,
+.inner-page .case-block--split { align-items: start; }
+.inner-page .rm-section:not(.rm-hero) .rm-visual,
+.inner-page .case-block .visual-slot { min-height: 0; align-content: start; }
+.inner-page .case-block .visual-slot { margin-bottom: clamp(20px, 3vw, 36px); padding: clamp(16px, 2vw, 26px); }
+
+/* Keep the tall ReadyMoms identity board compact while allowing its full system to be explored. */
+.rm-design-system-visual { gap: 12px; padding: clamp(16px, 2vw, 26px); }
+.rm-design-system-scroll { width: 100%; max-height: 440px; overflow-y: auto; overscroll-behavior: contain; scrollbar-color: #87a878 #f6f0e6; }
+.rm-design-system-board { display: block; width: 100%; height: auto; border-radius: 14px; }
+.rm-design-system-visual figcaption { align-self: stretch; }
+
+.project-footer a:last-child { display: inline-flex; align-items: center; gap: .35em; }
+.project-footer__arrow { font-size: 1.25em; line-height: 1; }
+
+/* With the hobby emojis removed, keep the content and gallery comfortably spaced inside each card. */
+.inner-page .about-hobbies article { padding: clamp(22px, 2.4vw, 30px); }
+.inner-page .about-hobbies h3 { margin-top: 0; margin-bottom: 14px; }
+
+@media (max-width: 760px) {
+  .inner-page .about-hobbies article { padding: clamp(20px, 6vw, 26px); }
+}
+
+@media (max-width: 760px) {
+  .crochet-photo-scroll { min-height: 0; }
+  .crochet-photo-scroll img { width: min(66vw, 210px); height: 205px; }
+  .rm-design-system-scroll { max-height: 360px; }
 }

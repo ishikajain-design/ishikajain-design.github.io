@@ -138,7 +138,7 @@ a { color: inherit; }
 .world:focus-visible .cloud-tint,
 .world.selected .cloud-tint { opacity: .55; }
 .world:hover .world-icon,
-.world:focus-visible .world-icon { transform: translateY(calc(var(--u) * -6)); }
+.world:focus-visible .world-icon { transform: translate(-50%, calc(var(--u) * -6)); }
 .world:hover .label,
 .world:focus-visible .label { transform: translateX(-50%) scale(1.03); }
 .world:focus-visible .label { outline: max(2px, calc(var(--u) * 3)) solid #fff; outline-offset: calc(var(--u) * 4); }
@@ -149,15 +149,23 @@ a { color: inherit; }
 .graphic-cloud { left: calc(var(--u) * 772 + var(--wide-extra) * .38); top: calc(var(--u) * 215); width: calc(var(--u) * 425 + var(--wide-extra) * .1); height: calc(var(--u) * 106); }
 .about-cloud { left: calc(var(--u) * 916 + var(--wide-extra) * .82); top: calc(var(--u) * 547); width: calc(var(--u) * 483 + var(--wide-extra) * .14); height: calc(var(--u) * 121); }
 .ux-cloud { left: calc(var(--u) * 311 + var(--wide-extra) * .28); top: calc(var(--u) * 788); width: calc(var(--u) * 590 + var(--wide-extra) * .15); height: calc(var(--u) * 153); }
-.graphic-icon { width: 49%; height: 152%; left: 27%; bottom: 52%; }
-.about-icon { width: 45%; height: 142%; left: 28%; bottom: 48%; }
-.ux-icon { width: 39.2%; height: 114.4%; left: 29.9%; bottom: 50%; }
+.graphic-icon, .about-icon, .ux-icon {
+  width: min(46%, clamp(104px, 13vw, 193px));
+  height: min(158%, clamp(110px, 12vw, 178px));
+  left: 50%;
+  bottom: 49%;
+  transform: translateX(-50%);
+}
+.about-icon, .ux-icon {
+  width: min(41.4%, clamp(93.6px, 11.7vw, 173.7px));
+  height: min(142.2%, clamp(99px, 10.8vw, 160.2px));
+}
 
 .label {
   position: absolute;
   left: 50%;
   bottom: -6%;
-  width: 66%;
+  width: min(72%, clamp(160px, 20vw, 300px));
   aspect-ratio: 2068 / 459;
   padding: 0 14%;
   display: grid;
@@ -169,8 +177,8 @@ a { color: inherit; }
 }
 .label-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
 .label-copy { position: relative; min-width: 0; text-align: center; line-height: 1.05; text-transform: uppercase; }
-.label strong { display: block; font-family: "Manrope:Bold", Manrope, sans-serif; font-size: clamp(12px, 15.5cqh, 27px); font-weight: 700; white-space: nowrap; color: var(--green); }
-.label small { display: block; margin-top: .3em; font-size: max(9px, 6.2cqh); font-weight: 700; letter-spacing: .12em; white-space: nowrap; color: #527046; }
+.label strong { display: block; font-family: "Manrope:Bold", Manrope, sans-serif; font-size: clamp(12px, calc(var(--u) * 16), 20px); font-weight: 700; white-space: nowrap; color: var(--green); }
+.label small { display: block; margin-top: .3em; font-size: clamp(9px, calc(var(--u) * 6), 11px); font-weight: 700; letter-spacing: .12em; white-space: nowrap; color: #527046; }
 
 .pipe {
   position: absolute;
@@ -262,6 +270,11 @@ a { color: inherit; }
   display: flex;
   gap: clamp(8px, calc(var(--u) * 12), 14px);
 }
+.utility-nav .utility-link {
+  width: clamp(44px, 4.4vw, 66px);
+  height: clamp(34px, 3.3vw, 50px);
+}
+.utility-nav .utility-link svg { width: 31%; max-width: 22px; }
 @media (max-aspect-ratio: 9/10) {
   :root { --u: calc(100vw / 400); --wide-extra: 0px; }
   body { overflow-y: auto; }
@@ -272,15 +285,15 @@ a { color: inherit; }
   .about-cloud { left: calc(var(--u) * 12); top: calc(var(--u) * 650); width: calc(var(--u) * 250); height: calc(var(--u) * 72); }
   .ux-cloud { left: calc(var(--u) * 122); top: calc(var(--u) * 890); width: calc(var(--u) * 248); height: calc(var(--u) * 72); }
   .graphic-icon { width: 46%; height: 145%; left: 29%; bottom: 48%; }
-  .about-icon { width: 43%; height: 140%; left: 27%; bottom: 49%; }
-  .ux-icon { width: 37.6%; height: 115.2%; left: 31.7%; bottom: 48%; }
+  .about-icon { width: 38.7%; height: 126%; left: 29.15%; bottom: 49%; }
+  .ux-icon { width: 33.84%; height: 103.68%; left: 33.58%; bottom: 48%; }
   .label { width: 88%; padding: 0 13%; }
-  .label strong { font-size: clamp(11px, 16cqh, 18px); }
+  .label strong { font-size: clamp(11px, calc(var(--u) * 15), 15px); }
   .label small { font-size: 9px; letter-spacing: .04em; }
   .avatar { width: calc(var(--u) * 66); height: calc(var(--u) * 112); }
   .intro { width: calc(var(--u) * 200); min-height: calc(var(--u) * 58); font-size: max(12px, calc(var(--u) * 13)); }
   .utility-nav { gap: 7px; }
-  .utility-link { width: calc(var(--u) * 54); height: calc(var(--u) * 40); }
+  .utility-nav .utility-link { width: clamp(44px, 4.4vw, 66px); height: clamp(34px, 3.3vw, 50px); }
   .drift { width: calc(var(--u) * 240); height: calc(var(--u) * 82); }
 }
 

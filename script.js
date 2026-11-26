@@ -5,8 +5,19 @@ const contactsMarkup = `
   <nav class="inner-cloud-utilities" aria-label="Contact and résumé">
     <a class="utility-cloud" href="https://www.linkedin.com/in/ishika-jain-973686215/" target="_blank" rel="noreferrer" aria-label="Visit Ishika Jain on LinkedIn"><span aria-hidden="true">in</span></a>
     <a class="utility-cloud" href="mailto:ijain04@calpoly.edu" aria-label="Email Ishika Jain"><span aria-hidden="true">✉</span></a>
-    <a class="utility-cloud" href="resume.pdf" download aria-label="Download Ishika Jain's résumé"><span aria-hidden="true">↓</span></a>
+    <a class="utility-cloud" href="resume.pdf" target="_blank" rel="noreferrer" aria-label="View Ishika Jain's résumé"><span aria-hidden="true">◉</span></a>
   </nav>`;
+
+const innerUtilityMarkup = `
+  <a class="utility-link" href="https://www.linkedin.com/in/ishika-jain-973686215/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 8.1V19H2.8V8.1h3.6ZM4.6 2.7a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM12.2 8.1v1.5h.1c.5-.9 1.8-1.9 3.7-1.9 3.9 0 4.7 2.6 4.7 6V19h-3.6v-4.7c0-1.1 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V19H9.2V8.1h3Z"/></svg><span class="tooltip">LinkedIn</span></a>
+  <a class="utility-link" href="mailto:ijain04@calpoly.edu" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5h17A2.5 2.5 0 0 1 23 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-17A2.5 2.5 0 0 1 1 16.5v-9A2.5 2.5 0 0 1 3.5 5Zm8.5 7.2 7.5-4.5h-15l7.5 4.5Zm0 2.4L3.4 9.5v7h17v-7L12 14.6Z"/></svg><span class="tooltip">Email</span></a>
+  <a class="utility-link" href="resume.pdf" target="_blank" rel="noreferrer" aria-label="View résumé"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c5.4 0 9.4 4.3 10.6 6.3a1.4 1.4 0 0 1 0 1.4C21.4 14.7 17.4 19 12 19S2.6 14.7 1.4 12.7a1.4 1.4 0 0 1 0-1.4C2.6 9.3 6.6 5 12 5Zm0 2.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2Zm0 2.2a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8Z"/></svg><span class="tooltip">View résumé</span></a>`;
+
+function standardizeInnerUtilities() {
+  document.querySelectorAll('.inner-utility-nav').forEach((nav) => {
+    nav.innerHTML = innerUtilityMarkup;
+  });
+}
 
 function addInnerPageUtilities() {
   document.querySelectorAll('.inner-page .site-header').forEach((header) => {
@@ -227,5 +238,6 @@ function setUpWorldMap() {
 }
 
 addInnerPageUtilities();
+standardizeInnerUtilities();
 setUpWorldFooters();
 setUpWorldMap();
